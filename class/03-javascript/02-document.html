@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>DOM(Document Object Model) 조작하기(HTML과 JavaScript 연결)</title>
+    <script>
+      function aaa() {
+        document.getElementById("qqq").innerText = "반갑습니다.";
+      }
+
+      function counter() {
+        const tmp = Number(document.getElementById("count").innerText) + 1;
+        document.getElementById("count").innerText = tmp;
+      }
+
+      function changeColor() {
+        document
+          .getElementById("ccc")
+          .setAttribute("style", "background-color: yellow;");
+      }
+
+      function setDisabled() {
+        document.getElementById("ddd").setAttribute("disabled", "true");
+      }
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <span id="qqq">안녕하세요</span>
+      <button onclick="aaa()">클릭하기</button>
+    </div>
+
+    <div>
+      <span id="count">0</span>
+      <button onclick="counter()">+1</button>
+    </div>
+
+    <div>
+      <button id="ccc" onclick="changeColor()">색깔바꾸기</button>
+      <button id="ddd" onclick="setDisabled()">비활성화시키기</button>
+    </div>
+  </body>
+</html>

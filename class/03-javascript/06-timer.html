@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>타이머</title>
+    <script>
+        
+        function getToken(){
+            const token = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+            document.getElementById("aaa").innerText = token
+
+            let time = 180
+            setInterval(function(){
+                if(time >= 0){
+                    const minutes = Math.floor(time / 60)
+                    const seconds = time % 60
+                    document.getElementById("qqq").innerText =  minutes + ":" + seconds
+                    time = time - 1
+                }
+            }, 1000)
+        }
+    </script>
+</head>
+<body>
+    <span id="aaa">000000</span><button onclick="getToken()">인증번호전송</button><br />
+    <span id="qqq">10</span><button>인증완료</button>
+</body>
+</html>
